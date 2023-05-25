@@ -1,21 +1,26 @@
 function threeSum(arr, target) {
 // write your code here
-  let csum = Number.MAX_VALUE;
-	 for(let i = 0; i < arr.length ; i++)
-	 {
-      for(let j =i + 1; j < arr.length; j++)
-      {
-        for(let k =j + 1; k < arr.length; k++)
-         {
-           if (Math.abs(x - csum) >
-           Math.abs(x - (arr[i] + arr[j] + arr[k])))
-            closestSum = (arr[i] + arr[j] + arr[k]);
-         }
+  let closestSum = Number.MAX_VALUE;
+ 
+    // Run three nested loops each loop
+    // for each element of triplet
+    for(let i = 0; i < arr.length ; i++)
+    {
+        for(let j =i + 1; j < arr.length; j++)
+        {
+            for(let k =j + 1; k < arr.length; k++)
+            {
+                 
+                // Update the closestSum
+                if (Math.abs(target - closestSum) >
+                    Math.abs(target - (arr[i] + arr[j] + arr[k])))
+                    closestSum = (arr[i] + arr[j] + arr[k]);
+            }
+        }
     }
-  }
      
-    
-    return csum;
+    // Return the closest sum found
+    return closestSum;
 }
 
 module.exports = threeSum;
